@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --bg-about: #ffffff;
+    --bg-skills: #f1f5f9;
+    --bg-projects: #f8fafc;
+    --bg-resume: #1e293b;
+    --bg-contact: #eff6ff;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --card-bg: #ffffff;
+    --radius: 16px;
+    --transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+section {
+    max-width: 100% !important;
+    padding: 6rem 10% !important;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+header {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    padding: 0 2rem;
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    animation: fadeInUp 1s ease;
+}
+
+#about {
+    background-color: var(--bg-about);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+#about p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+#skills {
+    background-color: var(--bg-skills);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+#skills li {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+}
+
+#skills li:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+#projects {
+    background-color: var(--bg-projects);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#projects h2 {
+    grid-column: 1 / -1;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+    display: block;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.project-card h3 {
+    margin: 1.5rem 1.5rem 0.5rem;
+    color: var(--text-dark);
+}
+
+.project-card p {
+    margin: 0 1.5rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+#resume {
+    background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), 
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#resume h2, #resume p {
+    color: white;
+}
+
+#resume h2::after {
+    background: white;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+}
+
+#contact {
+    background-color: var(--bg-contact);
+    text-align: center;
+    border-top: 1px solid #dbeafe;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+#contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+#contact a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
